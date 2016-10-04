@@ -8,5 +8,6 @@
         android:layout_height="match_parent"
         android:inputType="textMultiLine"
         android:gravity="top|left"
-        android:id="@+id/editText" />
+        android:id="@+id/editText"
+        android:background="@drawable/zadnik" />
 </LinearLayout>

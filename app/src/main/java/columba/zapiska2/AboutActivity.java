@@ -3,6 +3,7 @@ package columba.zapiska2;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -42,6 +43,8 @@ public class AboutActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.about_menu, menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.iiiapka2));
+
         return true;
     }
 
@@ -114,8 +117,15 @@ public class AboutActivity extends AppCompatActivity {
         } catch (Exception e) {
             intent2.putExtra("nameButt", mEditText.getText().toString());
         }
-        intent2.putExtra("id", fname);
-        setResult(228, intent2);
+
+        if(!mEditText.getText().toString().equals("")) {
+            intent2.putExtra("id", fname);
+            setResult(228, intent2);
+        }
+        else {
+            intent2.putExtra("DELETED", fname);
+            setResult(0, intent2);
+        }
         finish();
     }
 

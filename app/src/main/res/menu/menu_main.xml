@@ -7,7 +7,7 @@
         android:id="@+id/new_page"
         android:icon="@android:drawable/ic_menu_add"
         android:orderInCategory="100"
-        app:showAsAction="ifRoom|withText"
-        android:title="add" />
+        android:title=""
+        app:showAsAction="always" />
 
 </menu>
